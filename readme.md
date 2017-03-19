@@ -78,12 +78,6 @@ As you're reviewing the app, try to fill in the blanks in the below Rails-to-Exp
 
 Write down **up to three questions** on topics you would like further clarification on. We will spend 15 minutes going over this (and the MVC chart) afterwards.
 
-### Note
-
-You may notice that we do things a bit differently in this example than we have in previous classes. For example, we use promises instead of callbacks when making Mongoose queries.
-
-This is to demonstrate that there is no single way of creating a Mongoose-Express app. If any of these differences seem confusing, don't hesitate to ask an instructor about them!
-
 ## Before We Continue!
 
 You are welcome to code along during the "I Do's" and "We Do's" in this lesson plan. We do ask, however, that **if you fall behind, do not attempt to catch up during those sections**. Instead, tilt down your screen and watch / take notes.
@@ -300,7 +294,14 @@ Let's make changes to our existing show route...
 
 <br/>
 
-![Show](http://i.imgur.com/OCIL9H5.png)
+### Solution
+
+<details>
+  <summary><strong>Click to reveal...</strong></summary>
+
+  ![Show](http://i.imgur.com/OCIL9H5.png)
+
+</details>
 
 ## Forms & `body-parser` (10 minutes / 1:40)
 
@@ -385,11 +386,18 @@ Create a form in the index view.
 
 <br/>
 
-![New non-functional 1](http://i.imgur.com/JqhY57R.png)
+### Solution
 
-Before we actually create a new candidate in the database, let's make sure we can access the user input submitted through the form.
+<details>
+  <summary><strong>Click to reveal...</strong></summary>
+
+  ![New non-functional 1](http://i.imgur.com/JqhY57R.png)
+
+</details>
 
 ### Steps
+
+Before we actually create a new candidate in the database, let's make sure we can access the user input submitted through the form.
 
 1. In `index.js`, create an express `POST` route that corresponds with `/candidates`.
 2. The route's only content should be a `res.json()` statement that returns the user input. (Hint: this is stored somewhere in `req`).
@@ -398,7 +406,7 @@ Before we actually create a new candidate in the database, let's make sure we ca
 
 <details>
 
-  <summary><strong>How are `<form>` and `req.body` related?</strong></summary>
+  <summary><strong>How are the form and `req.body` related?</strong></summary>
 
   > The values a user submits through the form can be found in `req.body` on the back-end.
 
@@ -426,9 +434,16 @@ Before we actually create a new candidate in the database, let's make sure we ca
 
 <br/>
 
-![New non-functional 2](http://i.imgur.com/iyxCyZC.png)
+### Solution
 
-> **`res.json(req.body)`** - The server will respond with JSON that contains the user input, which is stored in `req.body`. This should look just like the output of Rails APIs you have created in this course.
+<details>
+  <summary><strong>Click to reveal...</strong></summary>
+
+  ![New non-functional 2](http://i.imgur.com/iyxCyZC.png)
+
+  > **`res.json(req.body)`** - The server will respond with JSON that contains the user input, which is stored in `req.body`. This should look just like the output of Rails APIs you have created in this course.
+
+</details>
 
 ## We Do: Create (10 minutes / 2:00)
 
@@ -482,9 +497,16 @@ Create an edit form in the show view.
 
 <br/>
 
-![Edit](http://i.imgur.com/74vYqMa.png)
+### Solution
 
-> **`method="post"`** - Wait, why is this a `POST` method? Aren't we supposed to send a `PUT` or `PATCH` request?  
+<details>
+  <summary><strong>Click to reveal...</strong></summary>
+
+  ![Edit](http://i.imgur.com/74vYqMa.png)
+
+  > **`method="post"`** - Wait, why is this a `POST` method? Aren't we supposed to send a `PUT` or `PATCH` request?  
+
+</details>
 
 ### Steps
 
@@ -533,16 +555,30 @@ We're almost there! Last bit of CRUD functionality we need to implement is `DELE
 
 <br/>
 
-![Delete 1](http://i.imgur.com/76mp0U4.png)
+### Solution
 
-> Again, **`method="post"`**. What's up with that?  
+<details>
+  <summary><strong>Click to reveal...</strong></summary>
+
+  ![Delete 1](http://i.imgur.com/76mp0U4.png)
+
+  > Again, **`method="post"`**. What's up with that?  
+
+</details>
 
 ### Steps
 
 1. In `index.js`, create a route that corresponds to our delete button.
 2. In it, use Mongoose to find and delete the candidate in question. (Hint: Refer to the Mongoose [lesson plan](https://github.com/ga-wdi-lessons/mongoose-intro#delete-5-min) or [documentation](http://mongoosejs.com/docs/api.html#query_Query-findOneAndRemove)).
 
+### Solution
+
+<details>
+  <summary><strong>Click to reveal...</strong></summary>
+
 ![Delete 2](http://i.imgur.com/1qF64Tf.png)
+
+</details>
 
 ## Closing / Questions
 
