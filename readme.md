@@ -292,8 +292,6 @@ Let's make changes to our existing show route...
 
 </details>
 
-<br/>
-
 ### Solution
 
 <details>
@@ -384,8 +382,6 @@ Create a form in the index view.
 
 </details>
 
-<br/>
-
 ### Solution
 
 <details>
@@ -431,8 +427,6 @@ Before we actually create a new candidate in the database, let's make sure we ca
   > Because we want to render whatever the user sent through the form as JSON.
 
 </details>
-
-<br/>
 
 ### Solution
 
@@ -495,8 +489,6 @@ Create an edit form in the show view.
 
 </details>
 
-<br/>
-
 ### Solution
 
 <details>
@@ -510,7 +502,6 @@ Create an edit form in the show view.
 
 ### Steps
 
-<!--  NHO: TODO update diffshot to for update -->
 1. In `index.js`, create a `.post` route in `index.js` that corresponds to our new form.
 2. In it, use a Mongoose method to find and update the candidate in question. (Hint: Refer to the Mongoose [lesson plan](https://github.com/ga-wdi-lessons/mongoose-intro#update-5-min) or  [documentation](http://mongoosejs.com/docs/api.html#query_Query-findOneAndUpdate)).
 3. `.then`, redirect the user to the updated candidate's show page.
@@ -557,8 +548,6 @@ We're almost there! Last bit of CRUD functionality we need to implement is `DELE
   > Again, because HTML only supports `GET` and `POST`, not `PUT` `PATCH` or `DELETE`.
 
 </details>
-
-<br/>
 
 ### Solution
 
