@@ -525,13 +525,18 @@ Create an edit form in the show view.
 
 </details>
 
-<br/>
+### Solution
 
-![Update](http://i.imgur.com/rtQGmQi.png)
+<details>
+  <summary><strong>Click to reveal...</strong></summary>
 
-> **`.findOneAndUpdate()`** - This method takes three arguments: (1) the new params, (2) the candidate to be updated and (3) `new: true`, which causes the modified candidate to be returned in the callback.
+  ![Update](http://i.imgur.com/rtQGmQi.png)
 
-> **Note**: this screenshot cut off a method call, can you think what should happen after the update?
+  > **`.findOneAndUpdate()`** - This method takes three arguments: (1) the new params, (2) the candidate to be updated and (3) `new: true`, which causes the modified candidate to be returned in the callback.
+
+  > **Note**: this screenshot cut off a method call, can you think what should happen after the update?
+
+</details>
 
 ## You Do: Delete (10 minutes)
 
