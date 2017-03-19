@@ -2,9 +2,9 @@
 
 ## Learning Objectives
 
-* Identify how an Express app fits within the MVC framework.
-* Connect an Express app to a MongoDB database.
-* Implement CRUD functionality in an Express app using Mongoose.
+* Identify how an Express app fits within the MVC framework
+* Connect an Express app to a MongoDB database
+* Implement CRUD functionality in an Express app using Mongoose
 
 ## Framing (5 minutes / 0:05)
 
@@ -23,7 +23,7 @@ $ git clone git@github.com:ga-wdi-exercises/whenpresident.git
 > The starter and solution code are branches in the [`WhenPresident` repo](https://github.com/ga-wdi-exercises/whenpresident/).
 
 
-#### Starter (express-mongoose-starter)
+#### Starter Code
 
 Checkout to the proper branch...
 
@@ -31,27 +31,27 @@ Checkout to the proper branch...
 $ git checkout express-mongoose-starter
 ```
 
-> Optionally, create a new branch on which you will do your work...
+Optionally, create a new branch on which you will do your work...
 
 ```bash
 $ git checkout -b MyName-express-mongoose
 ```
 
-#### And While You're At It...
+#### While You're At It...
 
-Install the modules listed in `package.json` and get Mongo running.
+Install the modules listed in `package.json`...
 
-Install dependencies
-  ```bash
-  $ npm install
-  ```
+```bash
+$ npm install
+```
 
-Then, start the mongo server - in **another** tab/window
-  ```bash
-  $ mongod  # Do this one in a separate tab or window.
-  ```
+Then, start the Mongo server in a separate Terminal tab or window...
 
-Check out what the starter code looks like in the browser by running `$ nodemon` and then visiting `http://localhost:3001`.
+```bash
+$ mongod
+```
+
+Check out what the starter code looks like in the browser by running `$ nodemon` and then visiting `http://localhost:3001` in the browser.
 
 ## Express Review (25 minutes / 0:30)
 
@@ -77,12 +77,6 @@ As you're reviewing the app, try to fill in the blanks in the below Rails-to-Exp
 ### 2. Questions
 
 Write down **up to three questions** on topics you would like further clarification on. We will spend 15 minutes going over this (and the MVC chart) afterwards.
-
-### Note
-
-You may notice that we do things a bit differently in this example than we have in previous classes. For example, we use promises instead of callbacks when making Mongoose queries.
-
-This is to demonstrate that there is no single way of creating a Mongoose-Express app. If any of these differences seem confusing, don't hesitate to ask an instructor about them!
 
 ## Before We Continue!
 
@@ -114,31 +108,34 @@ In order for us to use Mongoose to communicate with our database, we need to lin
 ### Questions
 
 <details>
+
   <summary><strong>What argument do we pass into `mongoose.connect()`?</strong></summary>
 
   > The location of the Mongo database.
 
-  <br/>
-
 </details>
 
+<br/>
+
 <details>
+
   <summary><strong>Does `.Schema()` modify our database? What about `.model()`?</strong></summary>
 
   > No. It's only once we start querying the database that it changes.
 
-  <br/>
-
 </details>
 
+<br/>
+
 <details>
+
   <summary><strong>What does `module.exports` do?</strong></summary>
 
   > It allows us to export code from one file to another. We could export only portions of the code or all of it if we wanted to.
 
-  <br/>
-
 </details>
+
+<br/>
 
 ![Connect to Mongoose](http://i.imgur.com/g1LnWzx.png)
 
@@ -182,22 +179,24 @@ We can test this by...
 ### Questions
 
 <details>
+
   <summary><strong>Why are we able to write out `mongoose.model("Candidate")` in `seed.js`?</strong></summary>
 
   > Because we defined that candidate in `connection.js`, which has been required.
 
-  <br/>
-
 </details>
 
+<br/>
+
 <details>
+
   <summary><strong>What does it mean to pass `{}` as an argument into `.remove()`?</strong></summary>
 
   > To remove everything. An empty object means that we're not going to restrict removal to certain key-value pairs.
 
-  <br/>
-
 </details>
+
+<br/>
 
 ![Add Seed Data to DB 1](http://i.imgur.com/zWHSpRO.png)
 
@@ -234,31 +233,34 @@ Now let's move down to our index route...
 ### Questions
 
 <details>
+
   <summary><strong>What does `res.render` mean? What do we need to pass into it as arguments?</strong></summary>
 
   > `res.render` is used to render the server response back to the browser. In this example we pass it (a) the view we want to render and (b) the data that should be available to it (i.e., candidates).
 
-  <br/>
-
 </details>
 
+<br/>
+
 <details>
+
   <summary><strong>What does it mean to pass `{}` as an argument into `.find()`?</strong></summary>
 
   > Like `.remove`, it means to find everything. The search is not limited to certain key-value pairs.
 
-  <br/>
-
 </details>
 
+<br/>
+
 <details>
+
   <summary><strong>Why does our `res.render` statement need to be wrapped in a callback?</strong></summary>
 
   > We want to wait until the Mongoose query has been completed before we render anything, especially if the render is dependent on data returned from the database.
 
-  <br/>
-
 </details>
+
+<br/>
 
 ![Index](http://i.imgur.com/QBz4ikv.png)
 
@@ -283,15 +285,21 @@ Let's make changes to our existing show route...
 ### Questions
 
 <details>
+
   <summary><strong>What's the difference between `.find` and `.findOne`?</strong></summary>
 
   > `.find` returns multiple items. `.findOne` only returns one.
 
-  <br/>
-
 </details>
 
-![Show](http://i.imgur.com/OCIL9H5.png)
+### Solution
+
+<details>
+  <summary><strong>Click to reveal...</strong></summary>
+
+  ![Show](http://i.imgur.com/OCIL9H5.png)
+
+</details>
 
 ## Forms & `body-parser` (10 minutes / 1:40)
 
@@ -314,11 +322,12 @@ Let's create a new candidate form. We'll add it to our existing index view...
 ### Before You Start Coding...
 
 <details>
+
   <summary><strong>What did we use in Rails to create an input form?</strong></summary>
 
   > `form_for` helper.  
 
-  ```erb
+  ```rb
   form_for @candidate do |f|
     f.input :name
     f.input :year
@@ -326,34 +335,33 @@ Let's create a new candidate form. We'll add it to our existing index view...
   end
   ```
 
-  <br/>
-
 </details>
 
+<br/>
+
 <details>
+
   <summary><strong>What attributes are important for a form tag?  Why?</strong></summary>
 
   > `action` and `method`.  This defines what route we will submit the form contents to.  
 
-  <br/>
-
 </details>
+
+<br/>
 
 <details>
   <summary><strong>What params do we need to access in the route/controller?</strong></summary>
 
   > `{ candidate: { name: "Al Gore", year: 2000 }`  
 
-  <br/>
-
 </details>
+
+<br/>
 
 <details>
   <summary><strong>What must be be in the form tag to create those params?</strong></summary>
 
   > Input tags will contain `name="candidate[year]"`.
-
-  <br/>
 
 </details>
 
@@ -367,19 +375,25 @@ Create a form in the index view.
 ### Questions
 
 <details>
+
   <summary><strong>Why do we set the `name` attribute to something like `candidate[name]`? How does this impact how we access this information in `index.js`?</strong></summary>
 
   > All candidate information will be available to us inside of a `candidate` object on the back-end.
 
-  <br/>
+</details>
+
+### Solution
+
+<details>
+  <summary><strong>Click to reveal...</strong></summary>
+
+  ![New non-functional 1](http://i.imgur.com/JqhY57R.png)
 
 </details>
 
-![New non-functional 1](http://i.imgur.com/JqhY57R.png)
+### Steps
 
 Before we actually create a new candidate in the database, let's make sure we can access the user input submitted through the form.
-
-### Steps
 
 1. In `index.js`, create an express `POST` route that corresponds with `/candidates`.
 2. The route's only content should be a `res.json()` statement that returns the user input. (Hint: this is stored somewhere in `req`).
@@ -387,35 +401,43 @@ Before we actually create a new candidate in the database, let's make sure we ca
 ### Questions
 
 <details>
-  <summary><strong>How are `<form>` and `req.body` related?</strong></summary>
+
+  <summary><strong>How are the form and `req.body` related?</strong></summary>
 
   > The values a user submits through the form can be found in `req.body` on the back-end.
 
-  <br/>
-
 </details>
 
+<br/>
+
 <details>
+
   <summary><strong>What does `res.json` do?</strong></summary>
 
   > It's sends a response back to the browser in JSON form. This functions similarly to `format.json` in Rails.
 
-  <br/>
-
 </details>
 
+<br/>
+
 <details>
+
   <summary><strong>Why are we accessing `req.body` instead of `res.body`?</strong></summary>
 
   > Because we want to render whatever the user sent through the form as JSON.
 
-  <br/>
-
 </details>
 
-![New non-functional 2](http://i.imgur.com/iyxCyZC.png)
+### Solution
 
-> **`res.json(req.body)`** - The server will respond with JSON that contains the user input, which is stored in `req.body`. This should look just like the output of Rails APIs you have created in this course.
+<details>
+  <summary><strong>Click to reveal...</strong></summary>
+
+  ![New non-functional 2](http://i.imgur.com/iyxCyZC.png)
+
+  > **`res.json(req.body)`** - The server will respond with JSON that contains the user input, which is stored in `req.body`. This should look just like the output of Rails APIs you have created in this course.
+
+</details>
 
 ## We Do: Create (10 minutes / 2:00)
 
@@ -429,13 +451,14 @@ Let's modify this post route so that it creates a candidate in our database.
 ### Questions
 
 <details>
+
   <summary><strong>What is `res.redirect`? How is it different from `res.send`, `res.render` and `res.json`?</strong></summary>
 
-  > (CHECK ANSWER) `res.redirect` initializes a new request-response cycle and usually is not passed any data from the controller.
-
-  <br/>
+  > `res.redirect` initializes a new request-response cycle and usually is not passed any data from the controller.
 
 </details>
+
+<br/>
 
 ![Create in DB](http://i.imgur.com/hqKzbWa.png)
 
@@ -459,21 +482,26 @@ Create an edit form in the show view.
 ### Questions
 
 <details>
+
   <summary><strong>Why does `method="post"` even though we are updating (vs. creating) something?</strong></summary>
 
   > HTML does not support `PUT` or `PATCH`. That being said, we can make a `POST` request and define behavior on the back-end that will actual update something instead of create.
 
-  <br/>
+</details>
+
+### Solution
+
+<details>
+  <summary><strong>Click to reveal...</strong></summary>
+
+  ![Edit](http://i.imgur.com/74vYqMa.png)
+
+  > **`method="post"`** - Wait, why is this a `POST` method? Aren't we supposed to send a `PUT` or `PATCH` request?  
 
 </details>
 
-![Edit](http://i.imgur.com/74vYqMa.png)
-
-> **`method="post"`** - Wait, why is this a `POST` method? Aren't we supposed to send a `PUT` or `PATCH` request?  
-
 ### Steps
 
-<!--  NHO: TODO update diffshot to for update -->
 1. In `index.js`, create a `.post` route in `index.js` that corresponds to our new form.
 2. In it, use a Mongoose method to find and update the candidate in question. (Hint: Refer to the Mongoose [lesson plan](https://github.com/ga-wdi-lessons/mongoose-intro#update-5-min) or  [documentation](http://mongoosejs.com/docs/api.html#query_Query-findOneAndUpdate)).
 3. `.then`, redirect the user to the updated candidate's show page.
@@ -481,19 +509,25 @@ Create an edit form in the show view.
 ### Questions
 
 <details>
+
   <summary><strong>How come `.findOneAndUpdate` has 3 arguments while `.create` has only 2?</strong></summary>
 
   > Because we need to identify the thing we are updating **AND** what it's going to be updated with.
 
-  <br/>
-
 </details>
 
-![Update](http://i.imgur.com/rtQGmQi.png)
+### Solution
 
-> **`.findOneAndUpdate()`** - This method takes three arguments: (1) the new params, (2) the candidate to be updated and (3) `new: true`, which causes the modified candidate to be returned in the callback.
+<details>
+  <summary><strong>Click to reveal...</strong></summary>
 
-> **Note**: this screenshot cut off a method call, can you think what should happen after the update?
+  ![Update](http://i.imgur.com/rtQGmQi.png)
+
+  > **`.findOneAndUpdate()`** - This method takes three arguments: (1) the new params, (2) the candidate to be updated and (3) `new: true`, which causes the modified candidate to be returned in the callback.
+
+  > **Note**: this screenshot cut off a method call, can you think what should happen after the update?
+
+</details>
 
 ## You Do: Delete (10 minutes)
 
@@ -508,24 +542,37 @@ We're almost there! Last bit of CRUD functionality we need to implement is `DELE
 ### Questions
 
 <details>
+
   <summary><strong>Why can't we use `app.delete` for a `DELETE` route?</strong></summary>
 
   > Again, because HTML only supports `GET` and `POST`, not `PUT` `PATCH` or `DELETE`.
 
-  <br/>
-
 </details>
 
-![Delete 1](http://i.imgur.com/76mp0U4.png)
+### Solution
 
-> Again, **`method="post"`**. What's up with that?  
+<details>
+  <summary><strong>Click to reveal...</strong></summary>
+
+  ![Delete 1](http://i.imgur.com/76mp0U4.png)
+
+  > Again, **`method="post"`**. What's up with that?  
+
+</details>
 
 ### Steps
 
 1. In `index.js`, create a route that corresponds to our delete button.
 2. In it, use Mongoose to find and delete the candidate in question. (Hint: Refer to the Mongoose [lesson plan](https://github.com/ga-wdi-lessons/mongoose-intro#delete-5-min) or [documentation](http://mongoosejs.com/docs/api.html#query_Query-findOneAndRemove)).
 
+### Solution
+
+<details>
+  <summary><strong>Click to reveal...</strong></summary>
+
 ![Delete 2](http://i.imgur.com/1qF64Tf.png)
+
+</details>
 
 ## Closing / Questions
 
