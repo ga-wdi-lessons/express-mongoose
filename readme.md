@@ -17,7 +17,7 @@ Today we'll be working on a brand new app called "When President." It's a simple
 Let's begin by cloning down the repo...
 
 ```bash
-$ git clone git@github.com:ga-wdi-exercises/whenpresident.git
+$ git clone https://github.com/ga-wdi-exercises/whenpresident.git
 ```
 
 > The starter and solution code are branches in the [`WhenPresident` repo](https://github.com/ga-wdi-exercises/whenpresident/).
