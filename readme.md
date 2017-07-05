@@ -296,7 +296,7 @@ Let's make changes to our existing show route...
 
 </details>
 
-## Forms & `body-parser` (10 minutes)
+## Forms & `body-parser` (5 minutes)
 
 In NodeJS, in order to process user input received through a form we will need to install and implement the `body-parser` middleware.  
 
@@ -308,9 +308,7 @@ Install it via the command line -- `npm install --save body-parser` -- then make
 >  
 > **`app.use(parser.urlencoded({extended: true}))`** - configure the parser to support html forms
 
-## You Do: New (10 minutes
-
-> 5 minutes exercise. 5 minutes review.
+## You Do: New (10 minutes)
 
 Let's create a new candidate form. We'll add it to our existing index view...
 
