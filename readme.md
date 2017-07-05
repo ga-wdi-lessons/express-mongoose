@@ -10,7 +10,7 @@
 
 So far in this unit you've learned about a number of tools - Node, Express, MongoDB and Mongoose - that developers can use to build a server-side Javascript application. You have yet, however, to use them all together. We'll be spending the bulk of today's lesson connecting everything and creating an application that can receive HTTP requests, retrieve data/make changes to a database and send information back to the end-user.
 
-### Yo Do: Setup (5 minutes)
+### You Do: Setup (5 minutes)
 
 Today we'll be working on a brand new app called "When President." It's a simple, one-model CRUD app that allows a user to declare who they're voting for as president in a given year.
 
