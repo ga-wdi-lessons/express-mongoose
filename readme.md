@@ -6,11 +6,11 @@
 * Connect an Express app to a MongoDB database
 * Implement CRUD functionality in an Express app using Mongoose
 
-## Framing (5 minutes / 0:05)
+## Framing (5 minutes)
 
 So far in this unit you've learned about a number of tools - Node, Express, MongoDB and Mongoose - that developers can use to build a server-side Javascript application. You have yet, however, to use them all together. We'll be spending the bulk of today's lesson connecting everything and creating an application that can receive HTTP requests, retrieve data/make changes to a database and send information back to the end-user.
 
-### Starter/Solution Code
+### Yo Do: Setup (5 minutes)
 
 Today we'll be working on a brand new app called "When President." It's a simple, one-model CRUD app that allows a user to declare who they're voting for as president in a given year.
 
@@ -53,9 +53,7 @@ $ mongod
 
 Check out what the starter code looks like in the browser by running `$ nodemon` and then visiting `http://localhost:3001` in the browser.
 
-## Express Review (25 minutes / 0:30)
-
-> 10 minutes exercise. 15 minutes review.
+## Express Review (10 Minutes)
 
 Take 10 minutes to review the Express application as it stands. As you're going through it, do the following...
 
@@ -74,9 +72,7 @@ As you're reviewing the app, try to fill in the blanks in the below Rails-to-Exp
 | **Model**             | `candidate.rb`             |         |
 | **View**              | `index.html.erb`           |         |
 
-### 2. Questions
-
-Write down **up to three questions** on topics you would like further clarification on. We will spend 15 minutes going over this (and the MVC chart) afterwards.
+.
 
 ## Before We Continue!
 
@@ -90,7 +86,7 @@ You are more than welcome to catch up when we get to the "You Do's," during whic
 
 Like ActiveRecord for Rails, Mongoose is an ODM we can use to represent data from a Mongo database as models in a Javascript back-end.
 
-## Connect to Mongoose (10 minutes / 0:45)
+## Connect to Mongoose (10 minutes)
 
 In order for us to use Mongoose to communicate with our database, we need to link it up to our Express application. We'll do this by...
 * Establishing a connection with a Mongo database.
@@ -147,7 +143,7 @@ In order for us to use Mongoose to communicate with our database, we need to lin
 >  
 > **`mongoose.connect`** - We also need to link Mongoose to our `whenpresident` Mongo database.  
 
-## Seed the Database (10 minutes / 0:55)
+## Seed the Database (10 minutes)
 
 Mongoose is now connected to our Express application. Let's seed some data into our database using Mongoose.
 
@@ -212,9 +208,9 @@ We can test this by...
 >  
 > **`Candidate.collection.insert(seedData)`** - Create a collection using the JSON contained in our seed file.  
 
-## Break (10 minutes / 1:05)
+## Break (15 minutes)
 
-## We Do: Index (10 minutes / 1:15)
+## We Do: Index (10 minutes)
 
 First order of business: display all candidates stored in the database. We'll do this by adding code to the controller that...
 * Retrieves all of the candidates from the database.
@@ -270,9 +266,8 @@ Now let's move down to our index route...
 >  
 > **`candidates: candidates`** - A little confusing, but the `candidates` we will be referencing in our view are now set to the `candidates` that are returned by Mongoose.  
 
-## You Do: Show (15 minutes / 1:30)
+## You Do: Show (10 minutes)
 
-> 10 minutes exercise. 5 minutes review.
 
 So we can show all candidates. You know what's cooler than all candidates? **ONE** candidate. Let's go back into the controller and creating a corresponding route / action for that.
 
@@ -301,7 +296,7 @@ Let's make changes to our existing show route...
 
 </details>
 
-## Forms & `body-parser` (10 minutes / 1:40)
+## Forms & `body-parser` (10 minutes)
 
 In NodeJS, in order to process user input received through a form we will need to install and implement the `body-parser` middleware.  
 
@@ -313,7 +308,7 @@ Install it via the command line -- `npm install --save body-parser` -- then make
 >  
 > **`app.use(parser.urlencoded({extended: true}))`** - configure the parser to support html forms
 
-## You Do: New (10 minutes / 1:50)
+## You Do: New (10 minutes
 
 > 5 minutes exercise. 5 minutes review.
 
@@ -439,7 +434,7 @@ Before we actually create a new candidate in the database, let's make sure we ca
 
 </details>
 
-## We Do: Create (10 minutes / 2:00)
+## We Do: Create (10 minutes)
 
 Let's modify this post route so that it creates a candidate in our database.
 
@@ -466,9 +461,9 @@ Let's modify this post route so that it creates a candidate in our database.
 >  
 > **`res.redirect()`** - Redirect the user to the new candidate's show view. In the callback, `candidate` represents the new candidate in our database.  
 
-## Break (5 minutes / 2:05)
+## Break (10 minutes)
 
-## You Do: Edit/Update (15 minutes / 2:20)
+## You Do: Edit/Update (15 minutes)
 
 Onto editing and updating candidates. We'll set up a form in our show view to allow users to submit updated candidate information.
 
